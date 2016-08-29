@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .ScaleAspectFit
         setupTextFields(topTextField)
         setupTextFields(bottomTextField)
     }
@@ -30,8 +30,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
+        //NSBackgroundColorAttributeName: UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 5.0
+        NSStrokeWidthAttributeName : -5.0
         ]
         tf.defaultTextAttributes = memeTextAttributes
         tf.textAlignment = .Center
@@ -84,7 +85,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillHide(notification: NSNotification){
-        view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -101,6 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage =  generateMemedImage()
         //Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil)
     }
     
     func generateMemedImage() -> UIImage
@@ -122,6 +124,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
+        subscribeToKeyboardNotificationsToHide()
     }
     
 }

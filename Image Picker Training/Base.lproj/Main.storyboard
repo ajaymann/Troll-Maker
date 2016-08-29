@@ -43,33 +43,46 @@
                                     <rect key="frame" x="0.0" y="537" width="800" height="263"/>
                                 </variation>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-xN-NU5">
-                                <rect key="frame" x="253" y="196" width="95" height="258"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
+                                <rect key="frame" x="0.0" y="68" width="600" height="474"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-xN-NU5">
+                                <rect key="frame" x="0.0" y="68" width="600" height="474"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
-                                        <rect key="frame" x="19" y="0.0" width="58" height="34"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="137"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="TOP">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="28" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
-                                        <rect key="frame" x="23" y="104" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
-                                        <rect key="frame" x="0.0" y="224" width="95" height="34"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
+                                        <rect key="frame" x="0.0" y="337" width="600" height="137"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Bottom">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="28" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-E5-Mvd">
+                            <navigationBar contentMode="scaleAspectFit" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-E5-Mvd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="FQ2-t4-dI1"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="vaB-J8-UOj"/>
                                 </items>
@@ -77,14 +90,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4wx-l7-Llc"/>
                             <constraint firstAttribute="trailing" secondItem="oBw-30-rOa" secondAttribute="trailing" id="53q-Mc-qRK"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="leading" secondItem="DJy-bi-NeG" secondAttribute="leading" id="Adf-YQ-TLb"/>
                             <constraint firstItem="i5h-xN-NU5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EBy-dL-DDW"/>
                             <constraint firstItem="oBw-30-rOa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GAQ-RZ-suO"/>
+                            <constraint firstAttribute="bottom" secondItem="i5h-xN-NU5" secondAttribute="bottom" constant="58" id="IzG-3z-bHT"/>
+                            <constraint firstAttribute="trailing" secondItem="i5h-xN-NU5" secondAttribute="trailing" id="PTs-rd-rA4"/>
                             <constraint firstItem="i5h-xN-NU5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tlo-BZ-nNn"/>
                             <constraint firstItem="dLB-E5-Mvd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dDb-L3-cdk"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="bottom" secondItem="DJy-bi-NeG" secondAttribute="bottom" id="f4A-j3-rVN"/>
                             <constraint firstAttribute="bottom" secondItem="oBw-30-rOa" secondAttribute="bottom" id="gsh-0J-Ign"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="68" id="oS7-ft-fxi"/>
                             <constraint firstItem="dLB-E5-Mvd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="phj-8e-SyB"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="trailing" secondItem="DJy-bi-NeG" secondAttribute="trailing" id="pmy-00-TSZ"/>
                             <constraint firstAttribute="trailing" secondItem="dLB-E5-Mvd" secondAttribute="trailing" id="pnt-2R-zKa"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="top" secondItem="DJy-bi-NeG" secondAttribute="top" id="xic-NY-nO0"/>
                         </constraints>
                     </view>
                     <connections>
