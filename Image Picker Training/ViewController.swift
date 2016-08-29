@@ -96,14 +96,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func savePressed(sender: AnyObject) {
         save()
     }
+    
     func save() {
-        //Create the meme
         let memedImage =  generateMemedImage()
-        
+        //Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
-        print(meme.memedImage)
-        
-        UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil)
     }
     
     func generateMemedImage() -> UIImage

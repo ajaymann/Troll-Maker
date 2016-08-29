@@ -17,29 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
-                                <rect key="frame" x="300" y="300" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
-                                <rect key="frame" x="284" y="72" width="32" height="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="384" y="72" width="32" height="17"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
-                                <rect key="frame" x="275" y="446" width="52" height="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
-                                <rect key="frame" x="0.0" y="537" width="600" height="63"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="Yyw-oe-osc"/>
+                                    <constraint firstAttribute="height" constant="50" id="1G0-5H-lw6"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Pick" id="iQv-ZQ-vkl">
@@ -62,29 +43,49 @@
                                     <rect key="frame" x="0.0" y="537" width="800" height="263"/>
                                 </variation>
                             </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-xN-NU5">
+                                <rect key="frame" x="253" y="196" width="95" height="258"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
+                                        <rect key="frame" x="19" y="0.0" width="58" height="34"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
+                                        <rect key="frame" x="23" y="104" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
+                                        <rect key="frame" x="0.0" y="224" width="95" height="34"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <navigationBar contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-E5-Mvd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="FQ2-t4-dI1"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Title" id="vaB-J8-UOj"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pak-tM-6C4" firstAttribute="top" secondItem="Td7-Zf-FkM" secondAttribute="bottom" constant="376" id="1Oq-7a-Jyv"/>
-                            <constraint firstItem="pak-tM-6C4" firstAttribute="top" secondItem="Td7-Zf-FkM" secondAttribute="bottom" constant="357" id="4bv-un-EuA"/>
-                            <constraint firstItem="DJy-bi-NeG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ERm-F0-IyE"/>
-                            <constraint firstItem="DJy-bi-NeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G1B-l5-Hn3"/>
-                            <constraint firstItem="pak-tM-6C4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RaF-MJ-Pg1"/>
-                            <constraint firstAttribute="trailing" secondItem="oBw-30-rOa" secondAttribute="trailing" id="VKY-Gu-qII"/>
-                            <constraint firstItem="oBw-30-rOa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VwT-gr-YqB"/>
-                            <constraint firstItem="Td7-Zf-FkM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="eA4-gV-UJP"/>
-                            <constraint firstItem="DJy-bi-NeG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i8K-uD-lyL"/>
-                            <constraint firstItem="DJy-bi-NeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jcz-ka-pxr"/>
-                            <constraint firstItem="oBw-30-rOa" firstAttribute="top" secondItem="pak-tM-6C4" secondAttribute="bottom" constant="74" id="qlD-5H-SvC"/>
-                            <constraint firstItem="Td7-Zf-FkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ylA-5m-f0Y"/>
-                            <constraint firstAttribute="bottom" secondItem="oBw-30-rOa" secondAttribute="bottom" id="yyP-04-pvX"/>
+                            <constraint firstAttribute="trailing" secondItem="oBw-30-rOa" secondAttribute="trailing" id="53q-Mc-qRK"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EBy-dL-DDW"/>
+                            <constraint firstItem="oBw-30-rOa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GAQ-RZ-suO"/>
+                            <constraint firstItem="i5h-xN-NU5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tlo-BZ-nNn"/>
+                            <constraint firstItem="dLB-E5-Mvd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dDb-L3-cdk"/>
+                            <constraint firstAttribute="bottom" secondItem="oBw-30-rOa" secondAttribute="bottom" id="gsh-0J-Ign"/>
+                            <constraint firstItem="dLB-E5-Mvd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="phj-8e-SyB"/>
+                            <constraint firstAttribute="trailing" secondItem="dLB-E5-Mvd" secondAttribute="trailing" id="pnt-2R-zKa"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="i8K-uD-lyL"/>
-                                <exclude reference="jcz-ka-pxr"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="pak-tM-6C4" id="lkz-jv-Tcp"/>
@@ -96,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="252"/>
+            <point key="canvasLocation" x="-399" y="283"/>
         </scene>
     </scenes>
 </document>
