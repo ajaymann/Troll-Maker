@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
-                                <rect key="frame" x="67" y="140" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
+                                <rect key="frame" x="20" y="28" width="335" height="567"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
                                 <rect key="frame" x="0.0" y="615" width="375" height="44"/>
@@ -35,17 +35,42 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
+                                <rect key="frame" x="67" y="66" width="258" height="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
+                                <rect key="frame" x="67" y="528" width="258" height="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DJy-bi-NeG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i8K-uD-lyL"/>
+                            <constraint firstItem="DJy-bi-NeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jcz-ka-pxr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i8K-uD-lyL"/>
+                                <exclude reference="jcz-ka-pxr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="bottomTextField" destination="pak-tM-6C4" id="lkz-jv-Tcp"/>
                         <outlet property="cameraButton" destination="TCS-yW-5Ds" id="iF9-c3-DZR"/>
                         <outlet property="imageView" destination="DJy-bi-NeG" id="nsH-Gc-rNr"/>
+                        <outlet property="topTextField" destination="Td7-Zf-FkM" id="DFf-do-SwB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="402.5" y="388.5"/>
         </scene>
     </scenes>
 </document>
