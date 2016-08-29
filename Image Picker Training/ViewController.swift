@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var toolBar: UIToolbar!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,12 +40,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotificationsToHide()
     }
 
     @IBAction func pickImageFromPhone(sender: AnyObject) {
@@ -70,6 +69,62 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func subscribeToKeyboardNotifications(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification){
+        view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
+    func subscribeToKeyboardNotificationsToHide(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillHide(notification: NSNotification){
+        view.frame.origin.y += getKeyboardHeight(notification)
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.CGRectValue().height
+    }
+    
+    @IBAction func savePressed(sender: AnyObject) {
+        save()
+    }
+    func save() {
+        //Create the meme
+        let memedImage =  generateMemedImage()
+        
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        print(meme.memedImage)
+        
+        UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil)
+    }
+    
+    func generateMemedImage() -> UIImage
+    {
+        toolBar.hidden = true
+        navigationController?.navigationBar.hidden = true
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame,
+                                     afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        toolBar.hidden = false
+        return memedImage
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

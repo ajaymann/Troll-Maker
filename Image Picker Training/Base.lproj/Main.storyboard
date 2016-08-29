@@ -21,7 +21,7 @@
                                 <rect key="frame" x="300" y="300" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-Zf-FkM">
                                 <rect key="frame" x="284" y="72" width="32" height="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -30,14 +30,17 @@
                                     <rect key="frame" x="384" y="72" width="32" height="17"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pak-tM-6C4">
                                 <rect key="frame" x="275" y="446" width="52" height="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
                                 <rect key="frame" x="0.0" y="537" width="600" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Yyw-oe-osc"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Pick" id="iQv-ZQ-vkl">
                                         <connections>
@@ -47,6 +50,11 @@
                                     <barButtonItem title="Pick From Camera" id="TCS-yW-5Ds">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="gvQ-qR-Itw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Save" id="yxs-zN-M7y">
+                                        <connections>
+                                            <action selector="savePressed:" destination="BYZ-38-t0r" id="f5P-81-g8D"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -82,12 +90,13 @@
                         <outlet property="bottomTextField" destination="pak-tM-6C4" id="lkz-jv-Tcp"/>
                         <outlet property="cameraButton" destination="TCS-yW-5Ds" id="iF9-c3-DZR"/>
                         <outlet property="imageView" destination="DJy-bi-NeG" id="nsH-Gc-rNr"/>
+                        <outlet property="toolBar" destination="oBw-30-rOa" id="dhR-Ds-GB5"/>
                         <outlet property="topTextField" destination="Td7-Zf-FkM" id="DFf-do-SwB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148.5" y="247.5"/>
+            <point key="canvasLocation" x="-232" y="252"/>
         </scene>
     </scenes>
 </document>
