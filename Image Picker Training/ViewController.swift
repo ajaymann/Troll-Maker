@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        shareButton.enabled = imageView.image != nil
         subscribeToKeyboardNotifications()
         subscribeToKeyboardNotificationsToHide()
     }
@@ -93,22 +95,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
+
     
-    @IBAction func savePressed(sender: AnyObject) {
-        save()
-    }
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    func save() {
-        let memedImage =  generateMemedImage()
+    
+    @IBAction func shareButtonPressed(sender: AnyObject) {
+        let memedImage = generateMemedImage()
+        let shareController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        presentViewController(shareController, animated: true) {
+            self.save(memedImage)
+            }
+        }
+    
+    func save(memedImage: UIImage) {
+        
         //Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
-        UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil)
+        
     }
     
     func generateMemedImage() -> UIImage
     {
         toolBar.hidden = true
-        navigationController?.navigationBar.hidden = true
+        navigationBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -119,6 +129,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         toolBar.hidden = false
+        navigationBar.hidden = false
         return memedImage
     }
     

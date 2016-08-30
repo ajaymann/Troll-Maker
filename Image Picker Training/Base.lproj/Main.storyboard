@@ -33,11 +33,6 @@
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="gvQ-qR-Itw"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Save" id="yxs-zN-M7y">
-                                        <connections>
-                                            <action selector="savePressed:" destination="BYZ-38-t0r" id="f5P-81-g8D"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="537" width="800" height="263"/>
@@ -84,7 +79,13 @@
                                     <constraint firstAttribute="height" constant="64" id="FQ2-t4-dI1"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="vaB-J8-UOj"/>
+                                    <navigationItem title="Title" id="vaB-J8-UOj">
+                                        <barButtonItem key="leftBarButtonItem" title="Share" style="plain" id="a59-V6-6e2">
+                                            <connections>
+                                                <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="OiL-kH-k0Z"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -112,6 +113,8 @@
                         <outlet property="bottomTextField" destination="pak-tM-6C4" id="lkz-jv-Tcp"/>
                         <outlet property="cameraButton" destination="TCS-yW-5Ds" id="iF9-c3-DZR"/>
                         <outlet property="imageView" destination="DJy-bi-NeG" id="nsH-Gc-rNr"/>
+                        <outlet property="navigationBar" destination="dLB-E5-Mvd" id="ziU-Kw-FZd"/>
+                        <outlet property="shareButton" destination="a59-V6-6e2" id="wVN-ha-3UD"/>
                         <outlet property="toolBar" destination="oBw-30-rOa" id="dhR-Ds-GB5"/>
                         <outlet property="topTextField" destination="Td7-Zf-FkM" id="DFf-do-SwB"/>
                     </connections>
