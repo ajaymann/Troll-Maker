@@ -107,12 +107,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.save(memedImage)
             }
         }
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true) { 
+            var tableVC = TableViewController()
+            tableVC.tableView.reloadData()
+        }
+        
+    }
     
     func save(memedImage: UIImage) {
         
         //Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
         
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage
