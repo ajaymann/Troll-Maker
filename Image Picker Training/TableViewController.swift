@@ -39,7 +39,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(memes.count)
+        
         return memes.count
     }
 
@@ -53,6 +53,24 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData()
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let memeEditController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+//        memeEditController.topTextField.text = "Upar"
+//        memeEditController.imageView.image = memes[indexPath.row].originalImage
+//        memeEditController.bottomTextField.text = "Niche"
+//        self.navigationController?.pushViewController(memeEditController, animated: true)
+//        presentViewController(memeEditController, animated: true, completion: nil)
+        
+        let object: AnyObject = storyboard!.instantiateViewControllerWithIdentifier("ViewController")
+        let detailVC = object as! ViewController
+        
+        /* Pass the data from the selected row to the detail view and present it */
+        detailVC.meme = memes[indexPath.row]
+        navigationController!.pushViewController(detailVC, animated: true)
+    }
+    
+
 
     /*
     // Override to support conditional editing of the table view.

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    var meme : Meme?
     
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -22,9 +23,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let meme = meme {
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+            imageView.image = meme.originalImage
+        }
         imageView.contentMode = .ScaleAspectFit
-        setupTextFields(topTextField)
-        setupTextFields(bottomTextField)
+        
     }
     
     func setupTextFields(tf : UITextField) {
@@ -37,16 +42,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         ]
         tf.defaultTextAttributes = memeTextAttributes
         tf.textAlignment = .Center
+        tf.placeholder = ".."
         tf.clearsOnBeginEditing =  true
+        tf.delegate = self
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField!)
+    {
+        subscribeToKeyboardNotifications()
+//        unSubscribeToKeyboardNotifications()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField!)
+    {
+        subscribeToKeyboardNotifications()
+//          unSubscribeToKeyboardNotifications()
     }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        setupTextFields(topTextField)
+        setupTextFields(bottomTextField)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = imageView.image != nil
         subscribeToKeyboardNotifications()
-        subscribeToKeyboardNotificationsToHide()
+//        unSubscribeToKeyboardNotifications()
     }
 
     @IBAction func pickImageFromPhone(sender: AnyObject) {
@@ -76,26 +97,54 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func subscribeToKeyboardNotifications(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
-    }
-    
-    func keyboardWillShow(notification: NSNotification){
-        view.frame.origin.y -= getKeyboardHeight(notification)
-    }
-    
-    func subscribeToKeyboardNotificationsToHide(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func keyboardWillHide(notification: NSNotification){
-        view.frame.origin.y = 0
+    func unSubscribeToKeyboardNotifications(){
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-        return keyboardSize.CGRectValue().height
-    }
+//    func keyboardWillShow(notification: NSNotification){
+//        view.frame.origin.y -= getKeyboardHeight(notification)
+//    }
+//    
+//  
+//    
+//    func keyboardWillHide(notification: NSNotification){
+//        view.frame.origin.y = 0
+//    }
+//    
+//    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+//        let userInfo = notification.userInfo
+//        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+//        return keyboardSize.CGRectValue().height
+//    }
 
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+            else {
+                
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+            else {
+                
+            }
+        }
+    }
     
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
@@ -146,7 +195,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
-        subscribeToKeyboardNotificationsToHide()
+        unSubscribeToKeyboardNotifications()
     }
     
 }
