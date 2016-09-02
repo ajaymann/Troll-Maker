@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C609C1651D720E3800BAAF76 /* Image Picker Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Picker Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C609C1651D720E3800BAAF76 /* Meme Me App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Me App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C609C1681D720E3800BAAF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C609C16A1D720E3800BAAF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C609C16D1D720E3800BAAF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		C609C1661D720E3800BAAF76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C609C1651D720E3800BAAF76 /* Image Picker Training.app */,
+				C609C1651D720E3800BAAF76 /* Meme Me App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C609C1641D720E3800BAAF76 /* Image Picker Training */ = {
+		C609C1641D720E3800BAAF76 /* Meme Me App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C609C1771D720E3800BAAF76 /* Build configuration list for PBXNativeTarget "Image Picker Training" */;
+			buildConfigurationList = C609C1771D720E3800BAAF76 /* Build configuration list for PBXNativeTarget "Meme Me App" */;
 			buildPhases = (
 				C609C1611D720E3800BAAF76 /* Sources */,
 				C609C1621D720E3800BAAF76 /* Frameworks */,
@@ -118,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = "Image Picker Training";
+			name = "Meme Me App";
 			productName = "Image Picker Training";
-			productReference = C609C1651D720E3800BAAF76 /* Image Picker Training.app */;
+			productReference = C609C1651D720E3800BAAF76 /* Meme Me App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -139,7 +139,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C609C1601D720E3800BAAF76 /* Build configuration list for PBXProject "Image Picker Training" */;
+			buildConfigurationList = C609C1601D720E3800BAAF76 /* Build configuration list for PBXProject "Meme Me App" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -152,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C609C1641D720E3800BAAF76 /* Image Picker Training */,
+				C609C1641D720E3800BAAF76 /* Meme Me App */,
 			);
 		};
 /* End PBXProject section */
@@ -301,7 +301,7 @@
 				INFOPLIST_FILE = "Image Picker Training/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ajaymann.Image-Picker-Training";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meme Me App";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -315,7 +315,7 @@
 				INFOPLIST_FILE = "Image Picker Training/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ajaymann.Image-Picker-Training";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meme Me App";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -323,7 +323,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C609C1601D720E3800BAAF76 /* Build configuration list for PBXProject "Image Picker Training" */ = {
+		C609C1601D720E3800BAAF76 /* Build configuration list for PBXProject "Meme Me App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C609C1751D720E3800BAAF76 /* Debug */,
@@ -332,7 +332,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C609C1771D720E3800BAAF76 /* Build configuration list for PBXNativeTarget "Image Picker Training" */ = {
+		C609C1771D720E3800BAAF76 /* Build configuration list for PBXNativeTarget "Meme Me App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C609C1781D720E3800BAAF76 /* Debug */,
