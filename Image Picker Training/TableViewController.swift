@@ -47,6 +47,7 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCustomCell
         cell.imageViewPFTableView.image = memes[indexPath.row].memedImage
+        cell.labelOfTableView.text = "\(memes[indexPath.row].topText) + \(memes[indexPath.row].bottomText)"
         return cell
     }
     

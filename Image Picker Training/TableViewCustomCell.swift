@@ -11,5 +11,6 @@ import UIKit
 
 class TableViewCustomCell : UITableViewCell {
 
+    @IBOutlet weak var labelOfTableView: UILabel!
     @IBOutlet weak var imageViewPFTableView: UIImageView!
 }
