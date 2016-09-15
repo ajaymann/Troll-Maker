@@ -303,6 +303,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ajaymann.Image-Picker-Training";
 				PRODUCT_NAME = "Meme Me App";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -317,6 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ajaymann.Image-Picker-Training";
 				PRODUCT_NAME = "Meme Me App";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

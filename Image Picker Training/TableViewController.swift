@@ -68,7 +68,7 @@ class TableViewController: UITableViewController {
         
         /* Pass the data from the selected row to the detail view and present it */
         detailVC.meme = memes[indexPath.row]
-        navigationController!.pushViewController(detailVC, animated: true)
+        self.navigationController?.presentViewController(detailVC, animated: true, completion: nil)
     }
     
 
