@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     var meme : Meme?
     
@@ -69,17 +69,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func pickImageFromPhone(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+        saveImageFromSource(.PhotoLibrary)
     }
     
     @IBAction func pickImageFromCamera(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        saveImageFromSource(.Camera)
+    }
+    
+    func saveImageFromSource(source: UIImagePickerControllerSourceType) {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = source
+        presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
@@ -92,12 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         presentViewController(activityViewController, animated: true, completion: nil)
-        
-//        
-//        let shareController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-//        presentViewController(shareController, animated: true) {
-//            self.save(memedImage)
-//        }
+
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
