@@ -27,7 +27,7 @@ class MemesCollectionViewController: UICollectionViewController {
     func setupCollectionView(){
         let screenSize = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
+        //let screenHeight = screenSize.height
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
@@ -62,7 +62,7 @@ class MemesCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
-        cell.collectionViewCellImageView.backgroundColor = UIColor.darkGrayColor()
+        //cell.collectionViewCellImageView.backgroundColor = UIColor.darkGrayColor()
         cell.collectionViewCellImageView.image = memes[indexPath.row].memedImage
         print(cell.frame.width)
         print(cell.frame.height)

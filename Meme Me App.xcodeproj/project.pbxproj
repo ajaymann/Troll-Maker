@@ -45,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1123E471D8D23CB002B0519 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C609C16C1D720E3800BAAF76 /* Main.storyboard */,
+				C609C1711D720E3800BAAF76 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		C609C15C1D720E3800BAAF76 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +73,12 @@
 		C609C1671D720E3800BAAF76 /* Meme Me 1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				C1123E471D8D23CB002B0519 /* Storyboards */,
 				C6881F6B1D78C42000D6E32A /* Controller */,
 				C6881F6A1D78C41A00D6E32A /* View */,
 				C6881F691D78C41100D6E32A /* Model */,
 				C609C1681D720E3800BAAF76 /* AppDelegate.swift */,
-				C609C16C1D720E3800BAAF76 /* Main.storyboard */,
 				C609C16F1D720E3800BAAF76 /* Assets.xcassets */,
-				C609C1711D720E3800BAAF76 /* LaunchScreen.storyboard */,
 				C609C1741D720E3800BAAF76 /* Info.plist */,
 			);
 			name = "Meme Me 1.0";

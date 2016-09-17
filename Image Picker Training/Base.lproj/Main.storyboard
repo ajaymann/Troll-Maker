@@ -7,11 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="5ZK-L3-xhg">
             <objects>
                 <navigationController id="nmN-Nz-o3f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="LbZ-gw-J8f"/>
+                    <tabBarItem key="tabBarItem" title="" image="Table" id="LbZ-gw-J8f"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sgh-Je-mgq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +28,7 @@
         <scene sceneID="bct-VK-EyG">
             <objects>
                 <tabBarController id="goy-DD-iht" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Max-kh-0FW">
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="Max-kh-0FW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,11 +42,11 @@
             </objects>
             <point key="canvasLocation" x="-2849" y="250"/>
         </scene>
-        <!--Collection-->
+        <!--Navigation Controller-->
         <scene sceneID="dve-0G-daZ">
             <objects>
                 <navigationController id="0Yb-C3-I0o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="Xm4-Vy-0UW"/>
+                    <tabBarItem key="tabBarItem" title="" image="Collection" id="Xm4-Vy-0UW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tgh-uA-EPT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +64,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="MemesCollectionViewController" id="86S-Ge-h7K" customClass="MemesCollectionViewController" customModule="Meme_Me_App" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" indicatorStyle="white" dataMode="prototypes" id="bg0-n1-gem">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agn-Uz-C4L">
                             <size key="itemSize" width="130" height="130"/>
@@ -113,15 +113,15 @@
             <objects>
                 <tableViewController id="seI-As-aEv" customClass="TableViewController" customModule="Meme_Me_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="174" sectionHeaderHeight="28" sectionFooterHeight="28" id="KnX-UF-Hga">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="174" id="rAE-fc-zCa" customClass="TableViewCustomCell" customModule="Meme_Me_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="174"/>
+                                <rect key="frame" x="0.0" y="92" width="568" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rAE-fc-zCa" id="88g-4W-ZBL">
-                                    <frame key="frameInset" width="375" height="174"/>
+                                    <frame key="frameInset" width="568" height="173"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eme-gn-2Xn">
@@ -193,29 +193,30 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
-                                <frame key="frameInset" minY="550" width="600" height="50"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1G0-5H-lw6"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Pick" id="iQv-ZQ-vkl">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sYZ-k4-bbb"/>
+                                    <barButtonItem image="Gallery" id="iQv-ZQ-vkl" userLabel="Gallery Button">
                                         <connections>
                                             <action selector="pickImageFromPhone:" destination="BYZ-38-t0r" id="rRB-dP-M6P"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Pick From Camera" id="TCS-yW-5Ds">
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="d3O-bK-MNK"/>
+                                    <barButtonItem systemItem="camera" id="TCS-yW-5Ds">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="gvQ-qR-Itw"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6sU-Le-QhH"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
-                                <frame key="frameInset" minY="68" width="600" height="474"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-bi-NeG">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-xN-NU5">
@@ -245,9 +246,9 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
+                                <variation key="heightClass=compact-widthClass=compact" spacing="140"/>
                             </stackView>
-                            <navigationBar contentMode="scaleAspectFit" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-E5-Mvd">
-                                <frame key="frameInset" width="600" height="64"/>
+                            <navigationBar contentMode="scaleAspectFit" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-E5-Mvd">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="FQ2-t4-dI1"/>
                                 </constraints>
@@ -302,6 +303,11 @@
             <point key="canvasLocation" x="436" y="250"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Collection" width="30" height="30"/>
+        <image name="Gallery" width="22" height="22"/>
+        <image name="Table" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2ac-vx-b8f"/>
     </inferredMetricsTieBreakers>
