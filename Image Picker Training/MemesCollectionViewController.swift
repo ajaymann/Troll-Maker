@@ -21,6 +21,7 @@ class MemesCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         self.collectionView?.reloadData()
     }
     

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  Image Picker Training
 //
 //  Created by Ajay Mann on 27/08/16.
@@ -39,7 +39,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
         NSStrokeWidthAttributeName : -5.0
         ]
         textField.defaultTextAttributes = memeTextAttributes
@@ -49,6 +49,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func textFieldDidBeginEditing(textField: UITextField)
     {
+        
         if textField.tag == 2 {
          subscribeToKeyboardNotifications()
         }
@@ -81,6 +82,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = source
+        imagePickerController.allowsEditing = true
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
@@ -107,9 +109,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // Use image as is.
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             imageView.image = image
         }
+        
+        // Use the cropped/edited image
+        if let image = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            imageView.image = image
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -130,14 +139,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
 
     func keyboardWillShow(notification: NSNotification) {
-        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             if view.frame.origin.y == 0{
                 self.view.frame.origin.y -= keyboardSize.height
             }
-            
         }
-        
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -145,7 +151,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             if view.frame.origin.y != 0 {
                 self.view.frame.origin.y += keyboardSize.height
             }
-            
         }
     }
     
@@ -160,8 +165,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         appDelegate.memes.append(meme)
     }
     
-    func generateMemedImage() -> UIImage
-    {
+    func generateMemedImage() -> UIImage {
         toolBar.hidden = true
         navigationBar.hidden = true
         
@@ -178,10 +182,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return memedImage
     }
     
+    // Hide keyoard when pressed Return button on Keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
         self.view.endEditing(true)
         return true
+    }
+    
+    // Hide Keyboard when touched outside the TextField.
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

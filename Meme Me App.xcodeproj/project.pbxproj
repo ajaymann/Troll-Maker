@@ -13,6 +13,7 @@
 		C609C1701D720E3800BAAF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C609C16F1D720E3800BAAF76 /* Assets.xcassets */; };
 		C609C1731D720E3800BAAF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C609C1711D720E3800BAAF76 /* LaunchScreen.storyboard */; };
 		C64494EF1D74BC5E004C9AF5 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64494EE1D74BC5E004C9AF5 /* Meme.swift */; };
+		C650C43B1D9054B20070F257 /* impactFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C650C43A1D9054B20070F257 /* impactFont.ttf */; };
 		C6BC3A7E1D79725D008A1A2F /* MemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC3A7D1D79725D008A1A2F /* MemesCollectionViewController.swift */; };
 		C6BC3A801D797363008A1A2F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC3A7F1D797363008A1A2F /* CollectionViewCell.swift */; };
 		C6E72E9E1D76106E00893692 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E72E9D1D76106E00893692 /* TableViewController.swift */; };
@@ -28,6 +29,7 @@
 		C609C1721D720E3800BAAF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C609C1741D720E3800BAAF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64494EE1D74BC5E004C9AF5 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		C650C43A1D9054B20070F257 /* impactFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impactFont.ttf; sourceTree = "<group>"; };
 		C6BC3A7D1D79725D008A1A2F /* MemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemesCollectionViewController.swift; sourceTree = "<group>"; };
 		C6BC3A7F1D797363008A1A2F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C6E72E9D1D76106E00893692 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				C6881F691D78C41100D6E32A /* Model */,
 				C609C1681D720E3800BAAF76 /* AppDelegate.swift */,
 				C609C16F1D720E3800BAAF76 /* Assets.xcassets */,
+				C650C43A1D9054B20070F257 /* impactFont.ttf */,
 				C609C1741D720E3800BAAF76 /* Info.plist */,
 			);
 			name = "Meme Me 1.0";
@@ -174,6 +177,7 @@
 				C609C1731D720E3800BAAF76 /* LaunchScreen.storyboard in Resources */,
 				C609C1701D720E3800BAAF76 /* Assets.xcassets in Resources */,
 				C609C16E1D720E3800BAAF76 /* Main.storyboard in Resources */,
+				C650C43B1D9054B20070F257 /* impactFont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
