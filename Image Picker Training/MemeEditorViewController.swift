@@ -25,14 +25,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let meme = meme {
-            topTextField.text = meme.topText
-            bottomTextField.text = meme.bottomText
-            imageView.image = meme.originalImage
-        }
         imageView.contentMode = .ScaleAspectFit
-        
     }
     
     func setupTextFields(textField : UITextField) {
@@ -49,7 +42,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func textFieldDidBeginEditing(textField: UITextField)
     {
-        
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
         if textField.tag == 2 {
          subscribeToKeyboardNotifications()
         }
@@ -99,14 +94,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     }
     
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
-        
-        dismissViewControllerAnimated(true) {
-            let tableVC = TableViewController()
-            tableVC.tableView.reloadData()
-        }
-        
-    }
+    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // Use image as is.
@@ -159,10 +147,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         //Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
-        
-        let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
