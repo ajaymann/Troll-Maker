@@ -51,12 +51,14 @@ class TableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let object: AnyObject = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController")
-        let detailVC = object as! MemeEditorViewController
+        let object: AnyObject = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailVC")
+        let detailVC = object as! MemeDetailVC
         
         /* Pass the data from the selected row to the detail view and present it */
         detailVC.meme = memes[indexPath.row]
-        self.showViewController(detailVC, sender: nil)
+        print(indexPath.row)
+        //self.presentViewController(detailVC, animated: true, completion: nil)
+        self.navigationController?.viewcontroller
     }
     
 

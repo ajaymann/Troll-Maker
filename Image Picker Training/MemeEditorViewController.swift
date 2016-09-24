@@ -26,13 +26,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let meme = meme {
+        if let meme = meme{
             topTextField.text = meme.topText
             bottomTextField.text = meme.bottomText
             imageView.image = meme.originalImage
+            
         }
-        imageView.contentMode = .ScaleAspectFit
         
+        imageView.contentMode = .ScaleAspectFit
     }
     
     func setupTextFields(textField : UITextField) {

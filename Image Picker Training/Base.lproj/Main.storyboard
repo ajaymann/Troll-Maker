@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goy-DD-iht">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goy-DD-iht">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -12,7 +12,7 @@
             <objects>
                 <navigationController id="nmN-Nz-o3f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Table" id="LbZ-gw-J8f"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sgh-Je-mgq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sgh-Je-mgq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -47,7 +47,7 @@
             <objects>
                 <navigationController id="0Yb-C3-I0o" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Collection" id="Xm4-Vy-0UW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tgh-uA-EPT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tgh-uA-EPT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -63,8 +63,8 @@
         <scene sceneID="pdi-5Y-wuN">
             <objects>
                 <collectionViewController storyboardIdentifier="MemesCollectionViewController" id="86S-Ge-h7K" customClass="MemesCollectionViewController" customModule="Meme_Me_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" indicatorStyle="white" dataMode="prototypes" id="bg0-n1-gem">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" indicatorStyle="white" dataMode="prototypes" id="bg0-n1-gem">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agn-Uz-C4L">
                             <size key="itemSize" width="130" height="130"/>
@@ -113,15 +113,15 @@
             <objects>
                 <tableViewController id="seI-As-aEv" customClass="TableViewController" customModule="Meme_Me_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="174" sectionHeaderHeight="28" sectionFooterHeight="28" id="KnX-UF-Hga">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="174" id="rAE-fc-zCa" customClass="TableViewCustomCell" customModule="Meme_Me_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="568" height="174"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rAE-fc-zCa" id="88g-4W-ZBL">
-                                    <frame key="frameInset" width="568" height="173"/>
+                                    <frame key="frameInset" width="414" height="173"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eme-gn-2Xn">
@@ -193,7 +193,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-30-rOa">
@@ -300,12 +300,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="250"/>
+            <point key="canvasLocation" x="117" y="245"/>
+        </scene>
+        <!--Meme DetailVC-->
+        <scene sceneID="9Hs-C0-SP6">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailVC" id="B8q-S4-xz6" customClass="MemeDetailVC" customModule="Meme_Me_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pFo-th-zDM"/>
+                        <viewControllerLayoutGuide type="bottom" id="OBD-Jj-9X3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P4d-o3-B4O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCa-Pd-FYA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="iBH-90-iMD"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="2bd-5c-u3E">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="8jU-xB-wey"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="krC-Xn-1Bf"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="krC-Xn-1Bf" firstAttribute="leading" secondItem="P4d-o3-B4O" secondAttribute="leading" id="1xg-IL-ggJ"/>
+                            <constraint firstItem="OBD-Jj-9X3" firstAttribute="top" secondItem="krC-Xn-1Bf" secondAttribute="bottom" constant="59" id="X9P-oq-TUc"/>
+                            <constraint firstItem="KCa-Pd-FYA" firstAttribute="leading" secondItem="P4d-o3-B4O" secondAttribute="leading" id="XLs-bw-3iN"/>
+                            <constraint firstItem="KCa-Pd-FYA" firstAttribute="top" secondItem="P4d-o3-B4O" secondAttribute="top" id="YqU-wI-2m3"/>
+                            <constraint firstAttribute="trailing" secondItem="KCa-Pd-FYA" secondAttribute="trailing" id="eUf-gs-yO5"/>
+                            <constraint firstAttribute="trailing" secondItem="krC-Xn-1Bf" secondAttribute="trailing" id="hiT-kb-8Da"/>
+                            <constraint firstItem="krC-Xn-1Bf" firstAttribute="top" secondItem="KCa-Pd-FYA" secondAttribute="bottom" id="q6s-vn-yaO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="krC-Xn-1Bf" id="gVx-Cz-OnY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ny-ff-tA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249.2753623188407" y="244.56521739130437"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Collection" width="30" height="30"/>
-        <image name="Gallery" width="22" height="22"/>
+        <image name="Collection" width="29" height="30"/>
+        <image name="Gallery" width="14" height="14"/>
         <image name="Table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

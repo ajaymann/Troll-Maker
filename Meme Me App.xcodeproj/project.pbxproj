@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1088C1F1D944D1300936AD3 /* MemeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1088C1E1D944D1300936AD3 /* MemeDetailVC.swift */; };
 		C609C1691D720E3800BAAF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C1681D720E3800BAAF76 /* AppDelegate.swift */; };
 		C609C16B1D720E3800BAAF76 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C16A1D720E3800BAAF76 /* MemeEditorViewController.swift */; };
 		C609C16E1D720E3800BAAF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C609C16C1D720E3800BAAF76 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1088C1E1D944D1300936AD3 /* MemeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailVC.swift; sourceTree = "<group>"; };
 		C609C1651D720E3800BAAF76 /* Meme Me App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Me App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C609C1681D720E3800BAAF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C609C16A1D720E3800BAAF76 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C609C16A1D720E3800BAAF76 /* MemeEditorViewController.swift */,
 				C6BC3A7D1D79725D008A1A2F /* MemesCollectionViewController.swift */,
 				C6E72E9D1D76106E00893692 /* TableViewController.swift */,
+				C1088C1E1D944D1300936AD3 /* MemeDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				C609C16B1D720E3800BAAF76 /* MemeEditorViewController.swift in Sources */,
 				C6BC3A801D797363008A1A2F /* CollectionViewCell.swift in Sources */,
 				C609C1691D720E3800BAAF76 /* AppDelegate.swift in Sources */,
+				C1088C1F1D944D1300936AD3 /* MemeDetailVC.swift in Sources */,
 				C6E72E9E1D76106E00893692 /* TableViewController.swift in Sources */,
 				C6E72EA01D76113900893692 /* TableViewCustomCell.swift in Sources */,
 			);
