@@ -34,7 +34,7 @@ class MemesCollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
         layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 2
         collectionView!.collectionViewLayout = layout
     }
 
@@ -65,17 +65,16 @@ class MemesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
         //cell.collectionViewCellImageView.backgroundColor = UIColor.darkGrayColor()
         cell.collectionViewCellImageView.image = memes[indexPath.row].memedImage
-        print(cell.frame.width)
-        print(cell.frame.height)
         return cell
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let object: AnyObject = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController")
-        let detailVC = object as! MemeEditorViewController
+        let object: AnyObject = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailVC")
+        let detailVC = object as! MemeDetailVC
         
+        /* Pass the data from the selected row to the detail view and present it */
         detailVC.meme = memes[indexPath.row]
-        navigationController!.pushViewController(detailVC, animated: true)
+        self.presentViewController(detailVC, animated: true, completion: nil)
     }
 
 

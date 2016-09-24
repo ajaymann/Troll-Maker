@@ -83,7 +83,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = source
-        imagePickerController.allowsEditing = true
+        //imagePickerController.allowsEditing = true
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
@@ -116,9 +116,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
         // Use the cropped/edited image
-        if let image = info["UIImagePickerControllerEditedImage"] as? UIImage {
-            imageView.image = image
-        }
+//        if let image = info["UIImagePickerControllerEditedImage"] as? UIImage {
+//            imageView.image = image
+//        }
         
         dismissViewControllerAnimated(true, completion: nil)
     }

@@ -56,9 +56,21 @@ class TableViewController: UITableViewController {
         
         /* Pass the data from the selected row to the detail view and present it */
         detailVC.meme = memes[indexPath.row]
-        print(indexPath.row)
-        //self.presentViewController(detailVC, animated: true, completion: nil)
-        self.navigationController?.viewcontroller
+        self.presentViewController(detailVC, animated: true, completion: nil)
+    }
+    
+   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            
+            // remove the item from the data model
+            let object = UIApplication.sharedApplication().delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.removeAtIndex(indexPath.row)
+            
+            // delete the table view row
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
     }
     
 
