@@ -48,16 +48,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         textField.delegate = self
     }
     
-    func textFieldDidBeginEditing(textField: UITextField)
-    {
-        
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
         if textField.tag == 2 {
-         subscribeToKeyboardNotifications()
+            subscribeToKeyboardNotifications()
         }
     }
     
-    func textFieldDidEndEditing(textField: UITextField)
-    {
+    func textFieldDidEndEditing(textField: UITextField){
         unSubscribeToKeyboardNotifications()
     }
     
@@ -83,7 +83,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = source
-        //imagePickerController.allowsEditing = true
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
@@ -110,16 +109,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        // Use image as is.
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             imageView.image = image
         }
-        
-        // Use the cropped/edited image
-//        if let image = info["UIImagePickerControllerEditedImage"] as? UIImage {
-//            imageView.image = image
-//        }
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -127,12 +119,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func subscribeToKeyboardNotifications(){
+    func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func unSubscribeToKeyboardNotifications(){
+    func unSubscribeToKeyboardNotifications() {
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
@@ -148,11 +140,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        
             if view.frame.origin.y != 0 {
                 self.view.frame.origin.y = 0
             }
-        
     }
     
     

@@ -28,7 +28,6 @@ class MemesCollectionViewController: UICollectionViewController {
     func setupCollectionView(){
         let screenSize = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
-        //let screenHeight = screenSize.height
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
@@ -37,18 +36,8 @@ class MemesCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 2
         collectionView!.collectionViewLayout = layout
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -74,7 +63,7 @@ class MemesCollectionViewController: UICollectionViewController {
         
         /* Pass the data from the selected row to the detail view and present it */
         detailVC.meme = memes[indexPath.row]
-        self.presentViewController(detailVC, animated: true, completion: nil)
+        self.showViewController(detailVC, sender: nil)
     }
 
 

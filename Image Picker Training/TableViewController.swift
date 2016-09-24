@@ -18,10 +18,6 @@ class TableViewController: UITableViewController {
         tableView.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
@@ -56,7 +52,7 @@ class TableViewController: UITableViewController {
         
         /* Pass the data from the selected row to the detail view and present it */
         detailVC.meme = memes[indexPath.row]
-        self.presentViewController(detailVC, animated: true, completion: nil)
+        self.showViewController(detailVC, sender: nil)
     }
     
    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
