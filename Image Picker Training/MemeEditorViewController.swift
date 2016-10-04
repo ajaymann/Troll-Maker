@@ -26,13 +26,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let meme = meme{
-            topTextField.text = meme.topText
-            bottomTextField.text = meme.bottomText
-            imageView.image = meme.originalImage
-            
-        }
-        
+//        if let meme = meme{
+//            topTextField.text = meme.topText
+//            bottomTextField.text = meme.bottomText
+//            imageView.image = meme.originalImage
+//            
+//        }
+//        
         imageView.contentMode = .ScaleAspectFit
     }
     
@@ -95,7 +95,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.save(memedImage)
             }
         }
-        presentViewController(activityViewController, animated: true, completion: nil)
+        //presentViewController(activityViewController, animated: true, completion: nil)
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone {
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        }
+        else {
+            let popup: UIPopoverController = UIPopoverController(contentViewController: activityViewController)
+            /*popup.presentPopoverFromRect(CGRectMake(self.view.frame.size.width / 2, self.view.frame.size.height / 4, 0, 0), inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)*/
+            popup.presentPopoverFromBarButtonItem(shareButton, permittedArrowDirections: .Any, animated: true)
+        }
 
     }
     
