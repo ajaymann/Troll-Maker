@@ -15,10 +15,13 @@ struct Meme{
     var originalImage: UIImage!
     var memedImage: UIImage!
     
-    init(topText: String, bottomText: String , originalImage: UIImage, memedImage: UIImage){
-        self.topText = topText
-        self.bottomText = bottomText
-        self.originalImage = originalImage
-        self.memedImage = memedImage
-    }
+    // Removed after udacity's review : Structs provide init by default
+    
+//    init(topText: String, bottomText: String , originalImage: UIImage, memedImage: UIImage){
+//        self.topText = topText
+//        self.bottomText = bottomText
+//        self.originalImage = originalImage
+//        self.memedImage = memedImage
+//    }
+    
 }
